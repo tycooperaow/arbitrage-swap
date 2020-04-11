@@ -164,7 +164,8 @@ function checkParameters(requiredParams, sentParams) {
 setInterval(function() {
   console.log('DETECTING ARBITRAGE OPPORTUNITIES:...')
   //BE CAREFUL OF THIS
-  if (daiPriceUniswap < daiPriceKyber) {
+  //Make sure that the BUY Price of one exchange is LESS THAN Sell Price for Profit
+  if (daiPriceUniswap > daiPriceKyber) {
     // console.log('Trade would be made')
     arbTrade();
   }
